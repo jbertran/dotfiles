@@ -1,0 +1,12 @@
+[user]
+	name = Jordi BERTRAN DE BALANDA (swhintern)
+	email = j.debalanda@gmail.com
+	signingkey = BC410C34
+	
+[core]
+	excludesfile = /home/jbertran/.gitignore-global
+[alias]
+	st = status
+	br = branch
+	co = checkout
+	ci = commit

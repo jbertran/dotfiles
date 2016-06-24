@@ -1,0 +1,39 @@
+# Emacs
+alias e='emacsclient -c'
+alias enw='emacsclient -t'
+alias emacsk="emacsclient -e '(kill-emacs)'"
+
+# Typo prevention
+alias sl='ls --color=auto'
+alias la='ls -a --color=auto'
+alias lla='ls -la --color=auto'
+
+# Command colors
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# SWH
+alias docw='firefox ~/swh-environment/swh-web-ui/docs/build/html/index.html'
+alias cds='cd ~/swh-environment/swh-web-ui/swh/web/ui/'
+alias cdw='cd ~/swh-environment/swh-web-ui/'
+
+# Go up a given number of directories
+up() {
+    local d=""
+    limit=$1
+    for ((i=1 ; i <= limit ; i++))
+    do
+	d=$d/..
+    done
+    d=$(echo $d | sed 's/^\///')
+    if [ -z "$d" ]; then
+	d=..
+    fi
+    cd $d
+}
+
+# Create a directory if inexistant
+# cd to it either way
+mkcd() {
+    mkdir -p $1 && cd $1
+}
