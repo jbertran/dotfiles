@@ -14,8 +14,8 @@ alias grep='grep --color=auto'
 
 # SWH
 alias docw='firefox ~/swh-environment/swh-web-ui/docs/build/html/index.html'
-alias cds='cd ~/swh-environment/swh-web-ui/swh/web/ui/'
-alias cdw='cd ~/swh-environment/swh-web-ui/'
+alias cds='cd ~/git/work/swh-environment/swh-web-ui/swh/web/ui/'
+alias cdw='cd ~/git/work/swh-environment/swh-web-ui/'
 
 # Go up a given number of directories
 up() {

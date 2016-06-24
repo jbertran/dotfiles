@@ -24,7 +24,18 @@
  '(column-number-mode t)
  '(custom-safe-themes
    (quote
-    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "4f0f2f5ec60a4c6881ba36ffbfef31b2eea1c63aad9fe3a4a0e89452346de278" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "99953b61ecd4c3e414a177934e888ce9ee12782bbaf2125ec2385d5fd732cbc2" "708df3cbb25425ccbf077a6e6f014dc3588faba968c90b74097d11177b711ad1" "705f3f6154b4e8fac069849507fd8b660ece013b64a0a31846624ca18d6cf5e1" "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" default)))
+    ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328"
+     "4f0f2f5ec60a4c6881ba36ffbfef31b2eea1c63aad9fe3a4a0e89452346de278"
+     "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4"
+     "99953b61ecd4c3e414a177934e888ce9ee12782bbaf2125ec2385d5fd732cbc2"
+     "708df3cbb25425ccbf077a6e6f014dc3588faba968c90b74097d11177b711ad1"
+     "705f3f6154b4e8fac069849507fd8b660ece013b64a0a31846624ca18d6cf5e1"
+     "a1289424bbc0e9f9877aa2c9a03c7dfd2835ea51d8781a0bf9e2415101f70a7e"
+     "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a"
+     "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d"
+     "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58"
+     "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e"
+     default)))
  '(fci-rule-color "#d6d6d6")
  '(initial-scratch-message nil)
  '(vc-annotate-background nil)
@@ -62,9 +73,9 @@
 ;;;                   FILE MODE HOOKS                    ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-list 'auto-mode-alist '(".bash_aliases" . sh-mode))
-(add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
-(add-to-list 'auto-mode-alist '(".bashrc" . sh-mode))
+(add-to-list 'auto-mode-alist '(".zshrc" . sh-mode))
+(add-to-list 'auto-mode-alist '(".sh_aliases" . sh-mode))
+(add-to-list 'auto-mode-alist '(".sh_env" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.pl$'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.py$'" . python-mode))
 (add-to-list 'auto-mode-alist '("\\.js$'" . js2-mode))

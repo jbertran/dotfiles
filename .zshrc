@@ -7,6 +7,11 @@
 #      ZSH        #
 ###################
 
+# Ctrl-Arrow combinations
+bindkey '^[[1;5D' emacs-backward-word
+bindkey '^[[1;5C' emacs-forward-word
+bindkey '^H' backward-delete-word
+
 # Set up the prompt
 autoload -Uz promptinit
 promptinit
