@@ -1,6 +1,6 @@
 # Emacs
 alias e='emacsclient -c'
-alias enw='emacsclient -t'
+alias enw='emacsclient -nw'
 alias emacsk="emacsclient -e '(kill-emacs)'"
 
 # Typo prevention
@@ -13,7 +13,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # SWH
-alias docw='firefox ~/swh-environment/swh-web-ui/docs/build/html/index.html'
+alias docw='firefox ~/git/work/swh-environment/swh-web-ui/docs/build/html/index.html'
 alias cds='cd ~/git/work/swh-environment/swh-web-ui/swh/web/ui/'
 alias cdw='cd ~/git/work/swh-environment/swh-web-ui/'
 
