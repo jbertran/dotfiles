@@ -1,4 +1,5 @@
 dotfile_dir=`pwd`
+repo_dir=$dotfile_dir/..
 
 home=('.tmux.conf'
       '.emacs' '.emacs.d'
@@ -6,11 +7,11 @@ home=('.tmux.conf'
       '.zshrc' '.sh_aliases' '.sh_env')
 
 for i in $home; do
-    ln -fs $dotfile_dir/$i ~/$i;
+    ln -nsf $dotfile_dir/$i ~/$i;
 done
 
-if [ ! -d "$dotfile_dir/oh-my-zsh" ]; then
-    git clone http://github.com/jbertran/oh-my-zsh $dotfile_dir
-fi
+# oh-my-zsh
+[ ! -d "$repo_dir/oh-my-zsh" ] && git clone http://github.com/jbertran/oh-my-zsh $repo_dir/oh-my-zsh
+ln -nsf $repo_dir/oh-my-zsh ~/.oh-my-zsh
 
 source ~/.zshrc
