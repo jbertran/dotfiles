@@ -1,6 +1,5 @@
 # Setup functions, aliases, env
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
-[ -f ~/.sh_funcs ] && source ~/.sh_funcs
 [ -f ~/.sh_env ] && source ~/.sh_env
 
 # Ctrl-Arrow combinations
@@ -47,9 +46,10 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # oh-my-zsh
 ZSH=~/.oh-my-zsh
+ZSH_CUSTOM=$ZSH/themes
 
 # Change theme here
-ZSH_THEME="agnoster"
+ZSH_THEME='agnoster'
 # Add plugins here
 plugins=(git colored-man-pages tmux)
 
