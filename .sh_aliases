@@ -15,10 +15,7 @@ alias grep='grep --color=auto'
 # SWH
 alias cdp='cd ~/git/perso'
 alias cdw='cd ~/git/work'
-
-alias cdws='cd ~/git/work/swh-environment/swh-web-ui/swh/web/ui/'
-alias cdww='cd ~/git/work/swh-environment/swh-web-ui/'
-
+alias cdf='cd ~/git/fac'
 
 # Go up a given number of directories
 up() {
