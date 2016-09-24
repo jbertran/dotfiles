@@ -1,5 +1,3 @@
-cd ~/git/work/swh-environment && source ~/git/work/swh-environment/pythonpath.sh && cd
-
 export DEBFULLNAME="Jordi BERTRAN DE BALANDA (swhintern)"
 export DEBEMAIL=j.debalanda@gmail.com
 export DEBSIGN_KEYID=BC410C34
