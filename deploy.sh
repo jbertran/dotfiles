@@ -1,3 +1,5 @@
+GITDIR_PREFIX='git'
+
 dotfile_dir=`pwd`
 repo_dir=$dotfile_dir/..
 
@@ -5,6 +7,14 @@ home=('.tmux.conf'
       '.emacs' '.emacs.d'
       '.gitconfig' '.gitignore-global'
       '.zshrc' '.sh_aliases' '.sh_env')
+
+gitdirs=('perso',
+         'work',
+         'fac')
+
+for i in $gitdirs; do
+    mkdir -p "$HOME/$GITDIR_PREFIX/$i";
+done
 
 for i in $home; do
     ln -nsf $dotfile_dir/$i ~/$i;
