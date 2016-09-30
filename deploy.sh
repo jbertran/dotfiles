@@ -4,7 +4,7 @@ dotfile_dir=`pwd`
 repo_dir=$dotfile_dir/..
 
 home=('.tmux.conf'
-      '.emacs' '.emacs.d'
+      '.spacemacs' '.emacs.d'
       '.gitconfig' '.gitignore-global'
       '.zshrc' '.sh_aliases' '.sh_env')
 
