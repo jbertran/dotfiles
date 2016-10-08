@@ -8,9 +8,7 @@ home=('.tmux.conf'
       '.gitconfig' '.gitignore-global'
       '.zshrc' '.sh_aliases' '.sh_env')
 
-gitdirs=('perso',
-         'work',
-         'fac')
+gitdirs=('perso' 'work' 'fac')
 
 for i in $gitdirs; do
     mkdir -p "$HOME/$GITDIR_PREFIX/$i";
