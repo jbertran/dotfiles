@@ -3,7 +3,7 @@ GITDIR_PREFIX='git'
 dotfile_dir=`pwd`
 repo_dir=$dotfile_dir/..
 
-home=('.tmux.conf'
+home=('.tmux.conf' '.xinitrc'
       '.spacemacs' '.emacs.d'
       '.gitconfig' '.gitignore-global'
       '.zshrc' '.sh_aliases' '.sh_env')
@@ -16,6 +16,7 @@ done
 
 for i in $home; do
     ln -nsf $dotfile_dir/$i ~/$i;
+    echo "$i setup complete."
 done
 
 # get oh-my-zsh
