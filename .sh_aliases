@@ -1,6 +1,6 @@
 # Emacs
 alias e='emacsclient -c'
-alias enw='emacsclient -nw'
+alias enw='emacsclient -t'
 alias emacsk="emacsclient -e '(kill-emacs)'"
 
 # Typo prevention
