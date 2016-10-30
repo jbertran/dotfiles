@@ -1,4 +1,4 @@
-export DEBFULLNAME="Jordi BERTRAN DE BALANDA (swhintern)"
+export DEBFULLNAME="Jordi Bertran de Balanda"
 export DEBEMAIL=j.debalanda@gmail.com
 export DEBSIGN_KEYID=BC410C34
 
