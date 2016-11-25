@@ -48,5 +48,5 @@ mkcd() {
 }
 
 pyg() {
-    pygmentize $1 | less -R
+    pygmentize -f terminal $1 | less -R
 }
