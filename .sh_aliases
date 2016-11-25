@@ -46,3 +46,7 @@ up() {
 mkcd() {
     mkdir -p $1 && cd $1
 }
+
+pyg() {
+    pygmentize $1 | less -R
+}
