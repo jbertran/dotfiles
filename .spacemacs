@@ -107,7 +107,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -250,7 +250,6 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-linum-mode)
-  (set-default-font "DejaVu Sans Mono-10" )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
