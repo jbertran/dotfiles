@@ -1,6 +1,6 @@
 export DEBFULLNAME="Jordi Bertran de Balanda"
 export DEBEMAIL=j.debalanda@gmail.com
-export DEBSIGN_KEYID=BC410C34
+export DEBSIGN_KEYID=A42BE015
 
 # System vars
 export ALTERNATE_EDITOR=''
