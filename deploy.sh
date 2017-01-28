@@ -10,13 +10,15 @@ home=('.tmux.conf' '.zlogin'
 
 gitdirs=('perso' 'work' 'fac')
 
+echo 'Building directories...'
 for i in $gitdirs; do
     mkdir -p "$HOME/$GITDIR_PREFIX/$i";
 done
 
+echo 'Deploying .files...'
 for i in $home; do
     ln -nsf $dotfile_dir/$i ~/$i;
-    echo "$i setup complete."
+    echo -e "\t$i deployed."
 done
 
 # get oh-my-zsh
@@ -24,12 +26,17 @@ done
 ln -nsf $repo_dir/oh-my-zsh/ ~/.oh-my-zsh
 
 # patch fonts for oh-my-zsh
-if [ -d "~/.local/share/fonts" ]; then
+read -sq $'PWL_CHOICE?Would you like to install Powerline fonts? [N/y]\n'
+if [[ "$PWL_CHOICE" = "y" ]]; then
     git clone https://github.com/powerline/fonts $repo_dir/fonts
     sh $repo_dir/fonts/install.sh && rm -rf $repo_dir/fonts
     ([ -d "$repo_dir/fonts" ] && echo "Error in removing powerline fonts") || echo "Powerline fonts installed, don't forget to change shell fonts!"
-else
-    echo "Powerline fonts probably already installed"
+fi
+
+# terminal color theme setup
+read -sq $'SHC_CHOICE?Would you like to install a terminal color theme? [N/y]'
+if [[ "$SHC_CHOICE" = "y" ]]; then
+    wget -O xt https://git.io/vKOB6 && chmod +x xt && ./xt && rm xt
 fi
 
 cd ~ && source ~/.zshrc
