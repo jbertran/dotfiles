@@ -25,12 +25,17 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      better-defaults
-     emacs-lisp
      git
-     markdown
-     javascript
+     ;; Languages
+     emacs-lisp
      ocaml
      haskell
+     markdown
+     javascript
+     c-c++
+     java
+     python
+     latex
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -98,8 +103,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-solarized-light
-                         spacemacs-dark
+   dotspacemacs-themes '(spacemacs-dark
+                         sanityinc-solarized-light
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -244,6 +249,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq c-basic-offset 4)
   )
 
 (defun dotspacemacs/user-config ()
@@ -268,7 +274,8 @@ you should place your code here."
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
  '(package-selected-packages
    (quote
-    (helm-company helm-c-yasnippet company-tern dash-functional company-statistics company-quickhelp pos-tip company-ghc company-cabal company auto-yasnippet ac-ispell auto-complete shm hindent haskell-snippets ghc haskell-mode cmm-mode web-beautify utop caml tern ocp-indent merlin json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js-doc coffee-mode tuareg rust-mode zenburn-theme sanityinc-solarized-theme color-theme-sanityinc-solarized-theme color-theme-sanityinc-solarized js2-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit-popup git-commit with-editor smooth-scroll magit elpy ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
+    (pyvenv pytest pyenv-mode py-yapf pip-requirements hy-mode helm-pydoc helm-company eclim disaster cython-mode company-tern dash-functional company-statistics company-quickhelp pos-tip company-ghc ghc company-cabal company-c-headers company-auctex company-anaconda cmake-mode clang-format auctex anaconda-mode pythonic f ac-ispell shm hindent helm-c-yasnippet haskell-snippets haskell-mode company cmm-mode auto-yasnippet auto-complete web-beautify utop column-enforce-mode dart-mode tuareg rust-mode zenburn-theme sanityinc-solarized-theme color-theme-sanityinc-solarized-theme color-theme-sanityinc-solarized js2-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit-popup git-commit with-editor smooth-scroll magit elpy ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme)))
+ '(standard-indent 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
