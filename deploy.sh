@@ -25,6 +25,10 @@ done
 [ ! -d "$repo_dir/oh-my-zsh" ] && git clone http://github.com/jbertran/oh-my-zsh $repo_dir/oh-my-zsh
 ln -nsf $repo_dir/oh-my-zsh/ ~/.oh-my-zsh
 
+# get tmux theme pack
+[ ! -d "$repo_dir/tmux-themepack" ] && git clone https://github.com/jimeh/tmux-themepack.git $repo_dir/tmux-themepack
+ln -nsf $repo_dir/tmux-themepack/ ~/.tmux-themepack
+
 # patch fonts for oh-my-zsh
 read -sq $'PWL_CHOICE?Would you like to install Powerline fonts? [N/y]\n'
 if [[ "$PWL_CHOICE" = "y" ]]; then
