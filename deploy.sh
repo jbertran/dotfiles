@@ -8,7 +8,7 @@ home=('.tmux.conf' '.zlogin'
       '.gitconfig' '.gitignore-global'
       '.zshrc' '.sh_aliases' '.sh_env')
 
-gitdirs=('perso' 'work' 'fac')
+gitdirs=('perso' 'work')
 
 echo 'Building directories...'
 for i in $gitdirs; do
