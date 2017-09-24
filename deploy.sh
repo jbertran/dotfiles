@@ -1,3 +1,6 @@
+#!/usr/bin/zsh
+
+# setup directories
 GITDIR_PREFIX='git'
 
 dotfile_dir=`pwd`
@@ -38,9 +41,11 @@ if [[ "$PWL_CHOICE" = "y" ]]; then
 fi
 
 # terminal color theme setup
-read -sq $'SHC_CHOICE?Would you like to install a terminal color theme? [N/y]'
+read -sq $'SHC_CHOICE?Would you like to install a terminal color theme? [N/y]\n'
 if [[ "$SHC_CHOICE" = "y" ]]; then
     wget -O xt https://git.io/vKOB6 && chmod +x xt && ./xt && rm xt
 fi
+
+echo ''
 
 cd ~ && source ~/.zshrc
