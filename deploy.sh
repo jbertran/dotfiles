@@ -7,9 +7,9 @@ dotfile_dir=`pwd`
 repo_dir=$dotfile_dir/..
 
 home=('.tmux.conf' '.zlogin'
-      '.spacemacs' '.emacs.d'
-      '.gitconfig' '.gitignore-global'
-      '.zshrc' '.sh_aliases' '.sh_env')
+      '.spacemacs' '.gitconfig'
+      '.gitignore-global' '.zshrc'
+      '.sh_aliases' '.sh_env')
 
 gitdirs=('perso' 'work')
 
@@ -23,6 +23,9 @@ for i in $home; do
     ln -nsf $dotfile_dir/$i ~/$i;
     echo -e "\t$i deployed."
 done
+
+echo 'Installing .emacs.d...'
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # get oh-my-zsh
 [ ! -d "$repo_dir/oh-my-zsh" ] && git clone http://github.com/jbertran/oh-my-zsh $repo_dir/oh-my-zsh
