@@ -20,6 +20,9 @@ alias cdp='cd ~/git/perso'
 alias cdw='cd ~/git/work'
 alias cdf='cd ~/git/fac'
 
+# Useful shit
+alias tailf='tail -f'
+
 # Long commands
 alias alert='paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga'
 
