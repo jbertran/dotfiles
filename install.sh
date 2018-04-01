@@ -1,13 +1,9 @@
 #!/bin/bash
 
 if [ "$1" = "-full" ]; then
-    # use the metapackage to install base dependencies
+    # use the included metapackage to install basic stuff
     METADIR='jbertran-meta-setup'
-
-    make -C $METADIR package
-    echo 'Root access required for metapackage installation'
-    exec sudo sh -c  "dpkg -i $METADIR/$METADIR.deb; apt-get -f install"
-    make -C clean
+    exec sudo sh -c "dpkg -i $METADIR/*.deb && apt-get -f install"
 fi
 
-zsh deploy.sh
+which zsh && zsh deploy.sh
