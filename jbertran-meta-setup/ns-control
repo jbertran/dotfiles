@@ -9,11 +9,11 @@ Standards-Version: 3.9.2
 Package: jbertran-meta-setup
 Version: 1.0
 Maintainer: Jordi Bertran de Balanda <j.debalanda@gmail.com>
-Pre-Depends: zsh, tmux, git, emacs, python3, python3-pygments, golang, build-essential, g++, npm, nodejs
+# Pre-Depends: <comma-separated list of packages>
 # Depends: <comma-separated list of packages>
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
-# Provides: <comma-separated list of packages>
+Provides: zsh, tmux, git, emacs25, python3, python3-pygments, golang, build-essential, g++
 # Replaces: <comma-separated list of packages>
 # Architecture: all
 # Copyright: <copyright file; defaults to GPL2>
