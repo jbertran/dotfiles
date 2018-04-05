@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -36,6 +37,10 @@ values."
      java
      python
      latex
+     ;; Tools
+     ansible
+     jinja2
+     salt
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -215,7 +220,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -262,6 +267,7 @@ you should place your code here."
   (global-linum-mode)
   (add-to-list 'auto-mode-alist '("\\.sh_aliases$" . sh-mode))
   (add-to-list 'auto-mode-alist '("\\.sh_env$" . sh-mode))
+  (global-column-enforce-mode t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -46,7 +46,7 @@ fi
 # terminal color theme setup
 read -sq $'SHC_CHOICE?Would you like to install a terminal color theme? [N/y]\n'
 if [[ "$SHC_CHOICE" = "y" ]]; then
-    git clone git@github.com/Mayccoll/Gogh.git && ./Gogh/gogh.sh
+    git clone git@github.com:Mayccoll/Gogh.git $repo_dir/gogh && $repo_dir/gogh/gogh.sh
 fi
 
 echo ''
