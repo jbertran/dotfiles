@@ -13,7 +13,7 @@ Maintainer: Jordi Bertran de Balanda <j.debalanda@gmail.com>
 # Depends: <comma-separated list of packages>
 # Recommends: <comma-separated list of packages>
 # Suggests: <comma-separated list of packages>
-Provides: zsh, tmux, git, emacs25, python3, python3-pygments, golang, build-essential, g++
+Provides: zsh, tmux, git, emacs25, python3, python3-pygments, golang, build-essential, g++, gdb
 # Replaces: <comma-separated list of packages>
 # Architecture: all
 # Copyright: <copyright file; defaults to GPL2>
