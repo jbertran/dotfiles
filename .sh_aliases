@@ -4,7 +4,7 @@ alias sudo='sudo '
 # Emacs
 alias e='emacsclient -c'
 alias enw='emacsclient -t'
-alias emacsk="emacsclient -e '(kill-emacs)'"
+alias emacsk="emacsclient -t -e '(kill-emacs)'"
 
 # Typo prevention
 alias sl='ls --color=auto'
@@ -18,10 +18,12 @@ alias grep='grep --color=auto'
 # git directories
 alias cdp='cd ~/git/perso'
 alias cdw='cd ~/git/work'
-alias cdf='cd ~/git/fac'
 
 # Useful shit
 alias tailf='tail -f'
+
+# Source default python venv without headaches
+alias svenv='source venv/bin/activate'
 
 # Long commands
 alias alert='paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga'
@@ -32,17 +34,14 @@ up() {
     limit=$1
     for ((i=1 ; i <= limit ; i++))
     do
-	d=$d/..
+	      d=$d/..
     done
-    d=$(echo $d | sed 's/^\///')
+    d=$(echo $d | sed 's@^/@@')
     if [ -z "$d" ]; then
-	d=..
+	      d=..
     fi
     cd $d
 }
-
-# Play a sound - do it after long commands!
-
 
 # Create a directory if inexistant
 # cd to it either way
@@ -61,4 +60,28 @@ less() {
     else
         command less $1
     fi
+}
+
+cat() {
+    if command -v pygmentize > /dev/null; then
+        pygmentize $1 > /dev/null 2>&1
+        command cat $1
+    else
+        command cat $1
+    fi
+}
+
+fuck () {
+    TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+    export TF_SHELL=zsh;
+    export TF_ALIAS=fuck;
+    export TF_SHELL_ALIASES=$(alias);
+    export TF_HISTORY="$(fc -ln -10)";
+    export PYTHONIOENCODING=utf-8;
+    TF_CMD=$(
+        thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+          ) && eval $TF_CMD;
+    unset TF_HISTORY;
+    export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+    test -n "$TF_CMD" && print -s $TF_CMD
 }
