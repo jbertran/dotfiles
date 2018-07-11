@@ -18,9 +18,6 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     csv
-     php
-     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -31,7 +28,6 @@ values."
      git
      ;; Languages
      emacs-lisp
-     ocaml
      haskell
      markdown
      javascript
@@ -39,6 +35,11 @@ values."
      java
      python
      latex
+     html
+     csv
+     php
+     react
+     yaml
      ;; Tools
      ansible
      docker

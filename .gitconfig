@@ -19,9 +19,10 @@
 	reflog = %C(auto)%h %<|(17)%gd %C(blue)%cI%C(reset) %gs
 [filter "lfs"]
 	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
 	fetchexclude = 3rdparty/packages,3rdparty/yarn,buildenv/data,buildenv/docker,buildchain/layers/repository,setup/s3/archives
 	required = true
 [color]
-	ui = auto
+	ui = true
+	diff = true

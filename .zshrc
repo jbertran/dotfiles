@@ -8,6 +8,20 @@ source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 # Setup venvwrapper
 source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
+# Setup nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Treat # as comment delimiter in interactive lines
+setopt INTERACTIVE_COMMENTS
+
+# bash-style word movement
+export WORDCHARS=''
+autoload -U select-word-style
+select-word-style bash
+
 # Ctrl-Arrow combinations
 bindkey '^[[1;5D' emacs-backward-word
 bindkey '^[[1;5C' emacs-forward-word
