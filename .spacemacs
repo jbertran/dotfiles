@@ -33,12 +33,14 @@ values."
      javascript
      c-c++
      java
+     docker
      python
      latex
      html
      csv
      php
      react
+     rust
      yaml
      ;; Tools
      ansible

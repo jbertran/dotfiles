@@ -12,6 +12,8 @@
 	rl = reflog --pretty=reflog
 	lg = log --graph
 	reflog = reflog --pretty=reflog
+[am]
+	threeWay = true
 [push]
 	default = simple
 [pretty]
