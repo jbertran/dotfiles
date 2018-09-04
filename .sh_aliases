@@ -22,6 +22,7 @@ alias cdw='cd ~/git/work'
 alias gst='git status'
 
 # Useful shit
+alias grn='grep -rn'
 alias tailf='tail -f'
 
 # Source default python venv without headaches
@@ -43,6 +44,14 @@ up() {
 	      d=..
     fi
     cd $d
+}
+
+resetvirtualenv() {
+    VENV=$1
+    workon $VENV
+    deactivate
+    rmvirtualenv $VENV
+    mkvirtualenv $VENV
 }
 
 # Create a directory if inexistant
