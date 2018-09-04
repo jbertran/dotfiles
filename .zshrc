@@ -1,6 +1,5 @@
 # Setup aliases and environment
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
-[ -f ~/.sh_env ] && source ~/.sh_env
 
 # Setup powerlevel9k
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
