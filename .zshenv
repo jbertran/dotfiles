@@ -1,5 +1,5 @@
 # Include ~/.local/bin in PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 # Term colors
 export TERM="xterm-256color"

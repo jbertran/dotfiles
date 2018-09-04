@@ -9,7 +9,7 @@ repo_dir=$dotfile_dir/..
 home=('.tmux.conf' '.zlogin'
       '.spacemacs' '.gitconfig'
       '.gitignore-global' '.zshrc'
-      '.sh_aliases' '.sh_env')
+      '.sh_aliases' '.zshenv')
 
 gitdirs=('perso' 'work')
 
