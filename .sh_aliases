@@ -54,6 +54,12 @@ resetvirtualenv() {
     mkvirtualenv $VENV
 }
 
+# Source the virtual env created by tox target
+sourcetox() {
+    local target=$1
+    source ".tox/$1/bin/activate"
+}
+
 # Create a directory if inexistant
 # cd to it either way
 mkcd() {
