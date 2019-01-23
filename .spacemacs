@@ -41,12 +41,13 @@ values."
      php
      react
      rust
+     sql
      yaml
      ;; Tools
      ansible
      docker
      salt
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
