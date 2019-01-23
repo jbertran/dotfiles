@@ -272,6 +272,10 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (global-linum-mode)
+  (add-to-list 'auto-mode-alist '("\\.default$" . sh-mode))
+  (add-to-list 'auto-mode-alist '("\\.install$" . sh-mode))
+  (add-to-list 'auto-mode-alist '("\\.postinst$" . sh-mode))
+  (add-to-list 'auto-mode-alist '("\\.spec.in$" . sh-mode))
   (add-to-list 'auto-mode-alist '("\\.sh_aliases$" . sh-mode))
   (add-to-list 'auto-mode-alist '("\\.sh_env$" . sh-mode))
   (global-column-enforce-mode t)
