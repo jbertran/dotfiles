@@ -28,3 +28,5 @@
 [color]
 	ui = true
 	diff = true
+[rerere]
+	enabled = true
