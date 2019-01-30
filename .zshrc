@@ -5,7 +5,9 @@
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
 # Setup venvwrapper
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git/work
+source /usr/local/bin/virtualenvwrapper.sh
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
