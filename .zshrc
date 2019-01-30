@@ -12,6 +12,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# tmux $TERM
+export TERM='screen-256color'
 
 # Treat # as comment delimiter in interactive lines
 setopt INTERACTIVE_COMMENTS
@@ -36,6 +38,10 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# Home/end fuckup between zsh and tmux
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 # ZSH completion options
 zstyle ':completion:*' auto-description 'specify: %d'

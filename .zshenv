@@ -2,7 +2,7 @@
 export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
 # Term colors
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 # Powerlevel9k configuration
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv status context dir vcs)
