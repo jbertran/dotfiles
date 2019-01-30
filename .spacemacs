@@ -262,6 +262,16 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq c-basic-offset 4)
+  ;; React layer 2-space indentation
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
   )
 
 (defun dotspacemacs/user-config ()
@@ -279,6 +289,7 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.sh_aliases$" . sh-mode))
   (add-to-list 'auto-mode-alist '("\\.sh_env$" . sh-mode))
   (global-column-enforce-mode t)
+  (setq powerline-default-separator 'arrow)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
