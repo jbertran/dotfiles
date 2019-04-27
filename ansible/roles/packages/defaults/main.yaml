@@ -1,0 +1,15 @@
+system_packages:
+  - epel-release
+  - emacs
+  - git
+  - python36
+  - python36-pip
+  - python
+  - python-virtualenvwrapper
+  - tmux
+  - tree
+  - which
+  - zsh
+
+pip_packages:
+  - ansible
