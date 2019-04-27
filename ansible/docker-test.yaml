@@ -1,0 +1,5 @@
+all:
+  hosts:
+    dotfiles-test:
+      ansible_connection: docker
+      ansible_user: root

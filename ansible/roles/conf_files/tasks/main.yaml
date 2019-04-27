@@ -1,0 +1,17 @@
+- name: copy over $HOME configuration files
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ homedir }}/{{ item }}"
+    mode: 0644
+    owner: "{{ username }}"
+    group: "{{ username }}"
+  loop: "{{ home_conf_files }}"
+  become: true
+
+- name: copy over system configuration files
+  copy:
+    src: "files/{{ item.src }}"
+    dest: "{{ item.dst }}"
+    mode: "{{ item.mode }}"
+  loop: "{{ sys_conf_files }}"
+  become: true

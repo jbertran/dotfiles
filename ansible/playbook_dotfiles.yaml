@@ -1,0 +1,7 @@
+- hosts:
+    all
+  roles:
+    - init
+    - packages
+    - conf_files
+    - repos

@@ -2,12 +2,12 @@
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
 
 # Setup powerlevel9k
-source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+source ~/.powerlevel9k/powerlevel9k.zsh-theme
 
 # Setup venvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git/work
-source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
@@ -42,8 +42,7 @@ autoload -Uz compinit
 compinit
 
 # Home/end fuckup between zsh and tmux
-bindkey "^[[1~" beginning-of-line
-bindkey "^[[4~" end-of-line
+bindkey -e
 
 # ZSH completion options
 zstyle ':completion:*' auto-description 'specify: %d'

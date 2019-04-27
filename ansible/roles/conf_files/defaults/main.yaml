@@ -1,0 +1,14 @@
+home_conf_files:
+  - .gitconfig
+  - .gitignore-global
+  - .sh_aliases
+  - .spacemacs
+  - .tmux.conf
+  - .zlogin
+  - .zshenv
+  - .zshrc
+
+sys_conf_files:
+  - src: keyboard
+    dst: /etc/default/keyboard
+    mode: 644

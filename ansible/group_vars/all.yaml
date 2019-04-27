@@ -1,0 +1,3 @@
+username: jbertran
+homedir: "/home/{{ username }}"
+repodir: "{{ homedir }}/git/perso/repos"
