@@ -1,0 +1,4 @@
+- name: powerline fonts install
+  shell: sh install.sh
+  args:
+    chdir: "{{ homedir }}/.powerline/fonts"
