@@ -1,0 +1,27 @@
+- name: set up repos
+  git:
+    repo: "{{ item.get('src') }}"
+    dest: "{{ item.get('dst') }}"
+    update: yes
+  loop: "{{ user_repos }}"
+  become: true
+
+- name: assign directory permissions
+  file:
+    path: "{{ item.get('dst') }}"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0755
+  loop: "{{ user_repos }}"
+  become: true
+
+- name: assign owner/group
+  file:
+    path: "{{ item.get('dst') }}"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    recurse: yes
+  loop: "{{ user_repos }}"
+  become: true

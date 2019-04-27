@@ -1,0 +1,13 @@
+user_repos:
+  - emacs:
+    src: https://github.com/syl20bnr/spacemacs.git
+    dst: "{{ homedir }}/.emacs.d"
+  - tmux-themepack:
+    src: https://github.com/jimeh/tmux-themepack.git
+    dst: "{{ homedir }}/.tmux-themepack"
+  - gogh:
+    src: https://github.com/Mayccoll/Gogh.git
+    dst: "{{ homedir }}/.gogh"
+  - powerlevel9k:
+    src: https://github.com/bhilburn/powerlevel9k.git
+    dst: "{{ homedir }}/.powerlevel9k"
