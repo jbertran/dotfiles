@@ -1,0 +1,27 @@
+- name: create basic groups
+  group:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ user_groups }}"
+  become: true
+
+- name: create user and add to groups
+  user:
+    name: "{{ username }}"
+    groups: "{{ user_groups }}"
+    password: "{{ default_password | password_hash('sha512') }}"
+    create_home: yes
+    append: yes
+    shell: "{{ default_shell }}"
+    update_password: on_create
+  become: true
+
+- name: setup directory tree
+  file:
+    path: "{{ homedir}}{{ item }}"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0755
+  loop: "{{ user_tree }}"
+  become: true

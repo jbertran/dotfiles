@@ -1,0 +1,12 @@
+default_password: default
+
+default_shell: /bin/zsh
+
+user_groups:
+  - sudo
+  - docker
+
+user_tree:
+  - /git/work
+  - /git/perso
+
