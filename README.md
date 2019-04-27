@@ -1,35 +1,33 @@
 # dotfiles
 
-Keep Linux configuration files for various modules and programs for fast deployment to new machines.
+Automated environment setup for yours truly using Ansible
 
-To deploy, just clone and run `deploy.sh`.
+## Requirements
 
-## Directory tree
+* `ansible`
+* A root-capable user on the target system(s)
+* A route to the outside world from the target system(s)
 
-* `dotfiles`
-  * `.tmux.conf`
-  *`.zlogin`
-  *`.spacemacs`
-  *`.emacs.d`
-  *`.gitconfig`
-  *`.gitignore-global`
-  *`.zshrc`
-  *`.sh_aliases`
-  *`.sh_env`
-  * `oh-my-zsh` - local clone of [oh-my-zsh clone]().
-  * `tmux-themepack` - local clone of [tmux-themepack]()
-* `home/<USER>`
-  * symlinks for config files
-  * git
-    * work
-    * perso
+## Usage
 
-Optional powerline fonts and terminal color themes repositories are both removed after
-their installation is complete.
+```shell
+$ ansible-playbook -i <your_inventory> ansible/dotfiles_playbook.yaml
+```
 
-## WiP
+## E2E manual tests
 
-* Package this as a .deb for more install targets and dependencies (zsh etc) - sometimes https
-  to the outside is not available too :(
-* Get a dummy user going for testing deployment
-* Add git 
+Because I'm lazy and Molecule looks like too much work
+
+### Docker
+
+```'shell'
+$ docker run --detach --name dotfiles-test -it <your_target_os>
+$ ansible-playbook -i ansible/docker-test.yaml ansible/dotfiles_playbook.yaml
+```
+
+### Vagrant
+
+Vagrantfile provided in tests, matching inventory at `ansible/vagrant-test.yaml`.
+
+## TODO
+
