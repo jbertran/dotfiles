@@ -1,27 +1,17 @@
----
-
-- name: include OS-specific package names
-  include_vars:
-    file: vars/{{ ansible_os_family | lower }}.yaml
-  when: "{{ ansible_os_family | lower }}" in "{{ supported_os }}"
-
 - name: install basic packages
   package:
     name: "{{ item }}"
     state: present
-  loop: "{{ system_packages }}"
+  loop:
+    "{{ system_packages[ansible_os_family] | default(system_packages['default']) }}"
   become: true
 
-- name: upgrade pip
-  pip:
-    name: pip
-    state: forcereinstall
-    executable: pip3
-  become: true
+- name: include pip manual install
+  import_tasks: pip.yaml
 
 - name: install pip packages
   pip:
-    name: "{{ os_packages + pip_packages['common'] }}"
+    name: "{{ os_packages + pip_packages.common }}"
     state: latest
     executable: /usr/local/bin/pip3
     extra_args: --user

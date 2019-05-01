@@ -1,15 +1,47 @@
 system_packages:
-  - epel-release
-  - emacs
-  - git
-  - python36
-  - python36-pip
-  - python
-  - python-virtualenvwrapper
-  - tmux
-  - tree
-  - which
-  - zsh
+  RedHat:
+    - epel-release
+    - emacs
+    - git
+    - python36
+    - python
+    - python-virtualenvwrapper
+    - python-setuptools
+    - python-wheel
+    - python36-setuptools
+    - tmux
+    - tree
+    - zsh
+  debian:
+    - emacs
+    - git
+    - python3
+    - python
+    - virtualenvwrapper
+    - python-setuptools
+    - python-wheel
+    - python3-setuptools
+    - tmux
+    - tree
+    - zsh
+  default:
+    - emacs
+    - git
+    - python3
+    - python
+    - python-virtualenvwrapper
+    - python-setuptools
+    - python-wheel
+    - python3-setuptools
+    - tmux
+    - tree
+    - zsh
+
+pip_install:
+  url: https://files.pythonhosted.org/packages/f9/fb/863012b13912709c13cf5cfdbfb304fa6c727659d6290438e1a88df9d848/pip-19.1-py2.py3-none-any.whl
+  filename: pip-19.1-py2.py3-none-any.whl
+  checksum:
+    "sha256:8f59b6cf84584d7962d79fd1be7a8ec0eb198aa52ea864896551736b3614eee9"
 
 pip_packages:
   common:
