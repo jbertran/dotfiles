@@ -6,9 +6,18 @@ home_conf_files:
   - .tmux.conf
   - .zlogin
   - .zshenv
-  - .zshrc
 
 sys_conf_files:
   - src: keyboard
     dst: /etc/default/keyboard
     mode: 644
+
+template_conf_files:
+  - name: .zshrc
+    os_vars:
+      RedHat:
+        venvwrapper: /usr/bin/virtualenvwrapper.sh
+      debian:
+        venvwrapper: /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+      default:
+        venvwrapper: /usr/bin/virtualenvwrapper.sh
