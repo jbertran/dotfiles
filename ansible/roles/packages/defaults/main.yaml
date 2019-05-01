@@ -12,4 +12,6 @@ system_packages:
   - zsh
 
 pip_packages:
-  - ansible
+  common:
+    - ansible
+    - pylint

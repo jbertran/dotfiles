@@ -1,0 +1,19 @@
+- name: download pip wheel
+  get_url:
+    url: "{{ pip_install.url }}"
+    dest: "/tmp/{{ pip_install.filename }}"
+    force: no
+    checksum: "{{ pip_install.checksum }}"
+
+- name: install pip for python2/python3
+  command:
+  args:
+    argv:
+      - "{{ item }}"
+      - "/tmp/{{ pip_install.filename }}/pip"
+      - install
+      - "/tmp/{{ pip_install.filename }}"
+  loop:
+    - python3
+    - python2
+  become: true

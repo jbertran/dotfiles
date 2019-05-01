@@ -21,8 +21,10 @@
 
 - name: install pip packages
   pip:
-    name: "{{ pip_packages }}"
+    name: "{{ os_packages + pip_packages['common'] }}"
     state: latest
     executable: /usr/local/bin/pip3
     extra_args: --user
-  become_user: "{{ username }}"
+  become: true
+  vars:
+    os_packages: "{{ pip_packages[ansible_os_family] | default([]) }}"
