@@ -5,9 +5,11 @@
   loop:
     "{{ system_packages[ansible_os_family] | default(system_packages['default']) }}"
   become: true
+  tags: ['package_mgr']
 
 - name: include pip manual install
   import_tasks: pip.yaml
+  tags: ['pip']
 
 - name: install pip packages
   pip:
@@ -18,3 +20,4 @@
   become: true
   vars:
     os_packages: "{{ pip_packages[ansible_os_family] | default([]) }}"
+  tags: ['pip']

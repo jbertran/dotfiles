@@ -7,6 +7,7 @@
     group: "{{ username }}"
   loop: "{{ home_conf_files }}"
   become: true
+  tags: ['user_conf']
 
 - name: templated $HOME configuration files
   template:
@@ -19,6 +20,7 @@
     template_vars: "{{ item['os_vars'][ansible_os_family] | default(item['os_vars']['default']) }}"
   loop: "{{ template_conf_files }}"
   become: true
+  tags: ['templated_conf']
 
 - name: copy over system configuration files
   copy:
@@ -27,3 +29,4 @@
     mode: "{{ item.mode }}"
   loop: "{{ sys_conf_files }}"
   become: true
+  tags: ['system_conf']

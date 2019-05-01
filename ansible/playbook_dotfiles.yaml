@@ -1,7 +1,11 @@
 - hosts:
     all
   roles:
-    - init
-    - packages
-    - conf_files
-    - repos
+    - role: init
+      tags: ['user_init']
+    - role: packages
+      tags: ['packages']
+    - role: conf_files
+      tags: ['conf_files']
+    - role: repos
+      tags: ['repos']
