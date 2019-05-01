@@ -2,12 +2,12 @@
 export TERM="screen-256color"
 
 # Powerlevel9k configuration
-export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv status context dir vcs)
-export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-export POWERLEVEL9K_STATUS_CROSS=true
-export POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=false
-export POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
-export POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-tagname)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv status context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_STATUS_CROSS=true
+POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=false
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
+POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-tagname)
 
 # System vars
 export ALTERNATE_EDITOR='vi'
