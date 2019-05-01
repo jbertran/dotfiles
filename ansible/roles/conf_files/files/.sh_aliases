@@ -87,6 +87,3 @@ catp() {
         command cat $1
     fi
 }
-
-# fuck.
-eval $(thefuck --alias)
