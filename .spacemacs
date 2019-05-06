@@ -120,13 +120,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(sanityinc-solarized-dark
-                         spacemacs-dark
+   dotspacemacs-themes '(solarized-light
                          monokai
+                         solarized-dark
+                         sanityinc-solarized-dark
+                         spacemacs-dark
                          sanityinc-solarized-light
                          spacemacs-light
-                         solarized-light
-                         solarized-dark
                          leuven
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
