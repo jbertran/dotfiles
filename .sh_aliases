@@ -24,6 +24,7 @@ alias gst='git status'
 # Useful shit
 alias grn='grep -rn'
 alias tailf='tail -f'
+alias pgrep='pgrep -l'
 
 # Source default python venv without headaches
 alias svenv='source venv/bin/activate'
