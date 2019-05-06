@@ -23,36 +23,42 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     auto-completion
-     better-defaults
-     git
-     ;; Languages
-     emacs-lisp
-     haskell
-     markdown
-     javascript
+     ;; Languages / markup
      c-c++
-     java
-     docker
-     python
-     latex
+     emacs-lisp
+     (go :variables
+         gofmt-command "goimports"
+         go-tab-width 4
+         )
+     haskell
      html
-     csv
+     java
+     javascript
+     latex
+     markdown
      php
+     python
      react
      rust
      sql
      yaml
      ;; Tools
      ansible
+     csv
      docker
-     salt
+     git
+     nginx
      org
+     salt
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
+     ;; Machinery
+     auto-completion
+     better-defaults
+     gtags
      syntax-checking
+     ;; spell-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
