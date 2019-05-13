@@ -9,3 +9,5 @@
       tags: ['conf_files']
     - role: repos
       tags: ['repos']
+    - role: post
+      tags: ['post_install']

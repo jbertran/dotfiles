@@ -1,0 +1,52 @@
+- name: prompt user for installation
+  pause:
+    prompt: "Download and install powerline fonts? [y/N]"
+  register: run_task
+
+- name: clone the repo
+  git:
+    repo: "{{ powerline.repo_url }}"
+    dest: "{{ powerline.repo_dir }}"
+    depth: 1
+  when: run_task.user_input == "y" or run_powerline == 1
+
+- name: prepare recipient directory
+  file:
+    path: "{{ homedir}}/.local/share/fonts"
+    state: directory
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    mode: 0755
+  become: true
+
+- name: find font file paths
+  find:
+    paths: "{{ powerline.repo_dir }}"
+    patterns:
+      - "*.otf"
+      - "*.ttf"
+      - "*.pcf.gz"
+    file_type: file
+    recurse: yes
+  register: font_files
+
+- name: copy the font files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ homedir}}/.local/share/fonts/{{ item | basename }}"
+    mode: 0644
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    remote_src: yes
+  loop: "{{ font_files.files | map(attribute='path') | list }}"
+  become: true
+
+- name: run the install
+  command:
+  args:
+    argv:
+      - sh
+      - "{{ powerline.repo_dir }}/install.sh"
+  when: run_task.user_input == "y" or run_powerline == 1
+  become_user: "{{ username }}"
+  register: out

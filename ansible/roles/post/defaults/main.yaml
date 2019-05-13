@@ -1,0 +1,3 @@
+powerline:
+  repo_dir: /tmp/powerline_fonts
+  repo_url: https://github.com/powerline/fonts

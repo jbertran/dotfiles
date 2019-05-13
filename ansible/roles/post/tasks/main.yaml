@@ -1,4 +1,3 @@
-- name: powerline fonts install
-  shell: sh install.sh
-  args:
-    chdir: "{{ homedir }}/.powerline/fonts"
+- name: include powerline fonts
+  import_tasks: powerline.yaml
+  tags: ['powerline']
