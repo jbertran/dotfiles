@@ -4,6 +4,9 @@
 # Setup powerlevel9k
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
+# gtags
+export GTAGSLABEL=pygments
+
 # Setup venvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git/work
