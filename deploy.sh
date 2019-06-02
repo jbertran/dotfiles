@@ -9,6 +9,7 @@ repo_dir=$dotfile_dir/..
 home=(
     '.gitconfig'
     '.gitignore-global'
+    '.i3'
     '.config/termite'
     '.sh_aliases'
     '.spacemacs'
