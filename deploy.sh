@@ -6,10 +6,17 @@ GITDIR_PREFIX='git'
 dotfile_dir=`pwd`
 repo_dir=$dotfile_dir/..
 
-home=('.tmux.conf' '.zlogin'
-      '.spacemacs' '.gitconfig'
-      '.gitignore-global' '.zshrc'
-      '.sh_aliases' '.zshenv')
+home=(
+    '.gitconfig'
+    '.gitignore-global'
+    '.config/termite'
+    '.sh_aliases'
+    '.spacemacs'
+    '.tmux.conf'
+    '.zlogin'
+    '.zshenv'
+    '.zshrc'
+)
 
 gitdirs=('perso' 'work')
 
