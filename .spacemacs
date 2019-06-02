@@ -120,7 +120,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(gruvbox-dark-soft
+                         gruvbox-light-soft
+                         solarized-light
                          monokai
                          solarized-dark
                          sanityinc-solarized-dark
@@ -267,6 +269,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (mapc 'load (file-expand-wildcards "~/.emacs.d/elpa/dash-*/dash.el"))
+  (mapc 'load (file-expand-wildcards "~/.emacs.d/elpa/autothemer-*/autothemer.el"))
   (setq c-basic-offset 4)
   ;; React layer 2-space indentation
   (setq-default
