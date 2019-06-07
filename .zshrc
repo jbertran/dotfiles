@@ -1,3 +1,6 @@
+# Initialize `keychain`
+eval $(keychain --eval --quiet)
+
 # Setup aliases and environment
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
 
