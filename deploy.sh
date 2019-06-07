@@ -10,6 +10,7 @@ home=(
     '.gitconfig'
     '.gitignore-global'
     '.config/i3'
+    '.config/polybar'
     '.config/termite'
     '.sh_aliases'
     '.spacemacs'
