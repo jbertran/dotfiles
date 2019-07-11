@@ -163,7 +163,7 @@ bindsym Mod4+r mode "resize"
 #########################################################################
 
 ### LOCK ###
-bindsym Mod4+Ctrl+l exec i3lock -c 000000
+bindsym Mod4+l exec i3lock -c 000000
 
 ### STATUS BAR ###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
