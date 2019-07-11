@@ -39,6 +39,7 @@ values."
      php
      python
      react
+     ruby
      rust
      sql
      yaml
