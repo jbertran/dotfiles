@@ -24,13 +24,6 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn't scale on retina/hidpi displays.
 
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
-set $up l
-set $down k
-set $left j
-set $right semicolon
-
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
 
@@ -47,23 +40,11 @@ bindsym Mod4+d exec dmenu_run
 # installed.
 # bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
-bindsym Mod4+$left focus left
-bindsym Mod4+$down focus down
-bindsym Mod4+$up focus up
-bindsym Mod4+$right focus right
-
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left
 bindsym Mod4+Down focus down
 bindsym Mod4+Up focus up
 bindsym Mod4+Right focus right
-
-# move focused window
-bindsym Mod4+Shift+$left move left
-bindsym Mod4+Shift+$down move down
-bindsym Mod4+Shift+$up move up
-bindsym Mod4+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Shift+Left move left
@@ -180,6 +161,9 @@ bindsym Mod4+r mode "resize"
 #########################################################################
 # BEGIN CUSTOM CONFIGURATION #
 #########################################################################
+
+### LOCK ###
+bindsym Mod4+Ctrl+l exec i3lock -c 000000
 
 ### STATUS BAR ###
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
