@@ -5,12 +5,12 @@ eval $(keychain --eval --quiet)
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
 
 # Setup powerlevel9k
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 
 # Setup venvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git/work
-source /usr/bin/virtualenvwrapper.sh
+source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
