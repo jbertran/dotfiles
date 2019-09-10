@@ -48,12 +48,6 @@ if [[ "$PWL_CHOICE" = "y" ]]; then
     ([ -d "$repo_dir/fonts" ] && echo "Error in removing powerline fonts") || echo "Powerline fonts installed, don't forget to change shell fonts!"
 fi
 
-# terminal color theme setup
-read -sq $'SHC_CHOICE?Would you like to install a terminal color theme? [N/y]\n'
-if [[ "$SHC_CHOICE" = "y" ]]; then
-    git clone git@github.com:Mayccoll/Gogh.git $repo_dir/gogh && $repo_dir/gogh/gogh.sh
-fi
-
 echo ''
 
 cd ~ && source ~/.zshrc
