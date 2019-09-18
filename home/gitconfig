@@ -1,8 +1,3 @@
-[user]
-	name  = Jordi Bertran de Balanda
-	email = jbertran@users.noreply.github.com
-[core]
-	excludesfile = /home/jbertran/.gitignore-global
 [alias]
 	br     = branch
   chp    = cherry-pick
@@ -15,19 +10,24 @@
 	wt     = worktree
 [am]
 	threeWay = true
-[push]
-	default = simple
-[pretty]
-	# reflog with date.
-	reflog = %C(auto)%h %<|(17)%gd %C(blue)%cI%C(reset) %gs
+[color]
+	ui   = true
+	diff = true
+[core]
+	excludesfile = /home/jbertran/.gitignore-global
 [filter "lfs"]
 	clean        = git-lfs clean -- %f
 	smudge       = git-lfs smudge --skip -- %f
 	process      = git-lfs filter-process --skip
 	fetchexclude = 3rdparty/packages,3rdparty/yarn,buildenv/data,buildenv/docker,buildchain/layers/repository,setup/s3/archives
 	required     = true
-[color]
-	ui   = true
-	diff = true
+[push]
+	default = simple
+[pretty]
+	# reflog with date.
+	reflog = %C(auto)%h %<|(17)%gd %C(blue)%cI%C(reset) %gs
 [rerere]
 	enabled = true
+[user]
+	name  = Jordi Bertran de Balanda
+	email = jbertran@users.noreply.github.com
