@@ -21,6 +21,9 @@
 	process      = git-lfs filter-process --skip
 	fetchexclude = 3rdparty/packages,3rdparty/yarn,buildenv/data,buildenv/docker,buildchain/layers/repository,setup/s3/archives
 	required     = true
+[grep]
+  linenumber     = true
+  extendedregexp = true
 [push]
 	default = simple
 [pretty]
