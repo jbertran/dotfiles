@@ -63,22 +63,10 @@ def task_clone():
         yield clone.task
 
 
-HOMEFILES = [
-    'gitconfig',
-    'gitignore-global',
-    'inputrc',
-    'profile',
-    'sh_aliases',
-    'spacemacs',
-    'tmux.conf',
-    'zlogin',
-    'zshenv',
-    'zshrc'
-]
-
+HOME_SOURCE = DOT_DIR / 'home'
 HOMELINKS = [
-    Symlink(source=DOT_DIR/dotfile, dest_dir=HOME_DIR, hidden=True)
-    for dotfile in HOMEFILES
+    Symlink(source=dotfile, dest_dir=HOME_DIR, hidden=True)
+    for dotfile in HOME_SOURCE.iterdir()
 ]
 
 
