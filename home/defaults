@@ -1,0 +1,5 @@
+# polybar #
+export POLYBAR_MONITOR=
+
+# xrandr settings file #
+export XRANDR_SETTINGS=

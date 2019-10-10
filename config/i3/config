@@ -162,6 +162,12 @@ bindsym Mod4+r mode "resize"
 # BEGIN CUSTOM CONFIGURATION #
 #########################################################################
 
+### Deployment-specific settings ###
+exec --no-startup-id sh ~/.defaults
+
+### DEFAULT X CONFIGURATION ###
+exec --no-startup-id sh ~/.config/xrandr/default.sh
+
 ### LOCK ###
 bindsym Mod4+l exec i3lock -c 000000
 
