@@ -349,6 +349,12 @@ you should place your code here."
   (add-to-list 'auto-mode-alist '("\\.sh_env$" . sh-mode))
   (global-column-enforce-mode t)
   (setq powerline-default-separator 'arrow)
+  ;; Keep previous Helm arrow key behaviour
+  (customize-set-variable 'helm-ff-lynx-style-map t)
+  (customize-set-variable 'helm-imenu-lynx-style-map t)
+  (customize-set-variable 'helm-semantic-lynx-style-map t)
+  (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
+  (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
