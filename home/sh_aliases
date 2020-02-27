@@ -22,7 +22,6 @@ alias cdw='cd ~/git/work'
 alias gst='git status'
 
 # Useful shit
-alias gl10='git log  --pretty=oneline | head -n 10'
 alias grn='grep -rn'
 alias tailf='tail -f'
 alias pgrep='pgrep -l'
@@ -32,6 +31,12 @@ alias svenv='source venv/bin/activate'
 
 # Long commands
 alias alert='paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga'
+
+# One-line logs for a given number of commits away from HEAD
+gl() {
+    history_size=$1;
+    git log  --pretty=oneline | head -n $history_size
+}
 
 # Go up a given number of directories
 up() {
