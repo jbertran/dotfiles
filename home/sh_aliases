@@ -94,3 +94,14 @@ catp() {
         command cat $1
     fi
 }
+
+##### WORK ALIASES #####
+ring() {
+    if [ -z $1 ]; then
+       cd "/home/jbertran/git/work/ring"
+    else
+        version_path="/home/jbertran/git/work/versions"
+        version=$1;
+        cd $version_path/ring-$version
+    fi
+}
