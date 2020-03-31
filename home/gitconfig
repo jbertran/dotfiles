@@ -23,7 +23,7 @@
 	required     = true
 [grep]
   linenumber     = true
-  extendedregexp = true
+	extendedRegexp = true
 [push]
 	default = simple
 [pretty]
@@ -34,3 +34,5 @@
 [user]
 	name  = Jordi Bertran de Balanda
 	email = jbertran@users.noreply.github.com
+[log]
+	follow = true
