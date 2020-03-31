@@ -5,7 +5,7 @@ eval $(keychain --eval --quiet)
 [ -f ~/.sh_aliases ] && source ~/.sh_aliases
 
 # Setup powerlevel9k
-source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Setup venvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
