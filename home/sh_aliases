@@ -25,6 +25,7 @@ alias gst='git status'
 alias grn='grep -rn'
 alias tailf='tail -f'
 alias pgrep='pgrep -l'
+alias dexec='docker exec -i -t'
 
 # Source default python venv without headaches
 alias svenv='source venv/bin/activate'
