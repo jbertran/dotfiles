@@ -74,19 +74,6 @@ mkcd() {
     mkdir -p $1 && cd $1
 }
 
-less() {
-    if command -v pygmentize > /dev/null; then
-        pygmentize $1 > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-            pygmentize $1 | less -R
-        else
-            command less $1
-        fi
-    else
-        command less $1
-    fi
-}
-
 catp() {
     if command -v pygmentize > /dev/null; then
         pygmentize $1 > /dev/null 2>&1
