@@ -41,9 +41,13 @@ class Clone:
         try:
             conf = configparser.ConfigParser()
             conf.read(str(gitconfig))
-            return conf['remote "origin"']['url'] == self.source_url
+            gitconf_url = conf['remote "origin"']['url'].rstrip('.git')
+            dodo_url = self.source_url.rstrip('.git')
+            return gitconf_url == dodo_url
         except KeyError:
             return False
+
+        return True
 
     @property
     def task(self):
