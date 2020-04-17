@@ -1,0 +1,11 @@
+# bat config
+# Specify desired theme (e.g. "TwoDark").  Issue `bat --list-themes` for a list of all available themes
+--theme="Solarized (light)"
+# Enable this to use italic text on the terminal (not supported on all terminals):
+#--italic-text=always
+# Uncomment the following line to disable automatic paging:
+#--paging=never
+# Use C++ syntax for .ino files
+#--map-syntax "*.ino:C++"
+# Use ".gitignore"-style highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"
