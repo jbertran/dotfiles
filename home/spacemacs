@@ -151,17 +151,17 @@ values."
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(
                          ;; --- LIGHT THEMES FOR SUMMER --- ;;
-                         solarized-light
-                         gruvbox-light-hard
-                         sanityinc-solarized-light
-                         spacemacs-light
+                         ;; solarized-light
+                         ;; gruvbox-light-hard
+                         ;; sanityinc-solarized-light
+                         ;; spacemacs-light
                          ;; --- DARK THEMES FOR WINTER --- ;;
-                         ;; monokai
-                         ;; solarized-dark
-                         ;; sanityinc-solarized-dark
-                         ;; spacemacs-dark
-                         ;; gruvbox-dark-hard
-                         ;; zenburn
+                         sanityinc-solarized-dark
+                         monokai
+                         solarized-dark
+                         spacemacs-dark
+                         gruvbox-dark-hard
+                         zenburn
                          )
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
