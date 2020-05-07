@@ -17,15 +17,12 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # Setup venvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git/work
-source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # Setup nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# tmux $TERM
-export TERM='screen-256color'
 
 # Treat # as comment delimiter in interactive lines
 setopt INTERACTIVE_COMMENTS
@@ -35,10 +32,20 @@ export WORDCHARS=''
 autoload -U select-word-style
 select-word-style bash
 
-# Ctrl-Arrow combinations
-bindkey '^[[1;5D' emacs-backward-word
-bindkey '^[[1;5C' emacs-forward-word
-bindkey '^H' backward-delete-word
+# Special key combinations
+typeset -g -A key
+
+key[Home]='^[[H'
+key[End]='^[[F'
+key[Control-Left]='^[[1;5D'
+key[Control-Right]='^[[1;5C'
+key[Control-BSpace]='^H'
+
+[[ -n "${key[Home]}"           ]] && bindkey -- "${key[Home]}"           beginning-of-line
+[[ -n "${key[End]}"            ]] && bindkey -- "${key[End]}"            end-of-line
+[[ -n "${key[Control-Left]}"   ]] && bindkey -- "${key[Control-Left]}"   backward-word
+[[ -n "${key[Control-Right]}"  ]] && bindkey -- "${key[Control-Right]}"  forward-word
+[[ -n "${key[Control-BSpace]}" ]] && bindkey -- "${key[Control-BSpace]}" backward-delete-word
 
 setopt histignorealldups sharehistory
 
