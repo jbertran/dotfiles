@@ -37,12 +37,14 @@ typeset -g -A key
 
 key[Home]='^[[H'
 key[End]='^[[F'
+key[Del]='^[[3~'
 key[Control-Left]='^[[1;5D'
 key[Control-Right]='^[[1;5C'
 key[Control-BSpace]='^H'
 
 [[ -n "${key[Home]}"           ]] && bindkey -- "${key[Home]}"           beginning-of-line
 [[ -n "${key[End]}"            ]] && bindkey -- "${key[End]}"            end-of-line
+[[ -n "${key[Del]}"            ]] && bindkey -- "${key[Del]}"            delete-char
 [[ -n "${key[Control-Left]}"   ]] && bindkey -- "${key[Control-Left]}"   backward-word
 [[ -n "${key[Control-Right]}"  ]] && bindkey -- "${key[Control-Right]}"  forward-word
 [[ -n "${key[Control-BSpace]}" ]] && bindkey -- "${key[Control-BSpace]}" backward-delete-word
