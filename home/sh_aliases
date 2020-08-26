@@ -94,3 +94,13 @@ ring() {
         cd $version_path/ring-$version
     fi
 }
+
+vpn() {
+    local action
+    if [ -z $1 ]; then
+        action="status"
+    else
+        action=$1
+    fi
+    systemctl "$action" openvpn-client@scality.service
+}
