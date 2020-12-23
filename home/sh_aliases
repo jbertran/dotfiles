@@ -3,8 +3,7 @@ alias sudo='sudo '
 
 # Emacs
 alias e='emacsclient -c'
-alias enw='emacsclient -t'
-alias emacsk="emacsclient -t -e '(kill-emacs)'"
+alias emacsk="emacsclient -e '(save-buffers-kill-emacs)'"
 
 # Typo prevention
 alias l='ls -la --color=auto'
@@ -28,11 +27,13 @@ alias tailf='tail -f'
 alias pgrep='pgrep -l'
 alias dexec='docker exec -i -t'
 
-# Source default python venv without headaches
-alias svenv='source venv/bin/activate'
+# find -name
 
-# Long commands
-alias alert='paplay /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga'
+fn() {
+    local name=$1;
+    shift;
+    find . -name $name $@
+}
 
 # One-line logs for a given number of commits away from HEAD
 gl() {
@@ -55,6 +56,7 @@ up() {
     cd $d
 }
 
+# Nuke and recreate a virtual env - requires virtualenvwrapper
 resetvirtualenv() {
     VENV=$1
     workon $VENV
@@ -63,28 +65,12 @@ resetvirtualenv() {
     mkvirtualenv $VENV
 }
 
-# Source the virtual env created by tox target
-sourcetox() {
-    local target=$1
-    source ".tox/$1/bin/activate"
-}
-
 # Create a directory if inexistant
 # cd to it either way
 mkcd() {
     mkdir -p $1 && cd $1
 }
 
-catp() {
-    if command -v pygmentize > /dev/null; then
-        pygmentize $1 > /dev/null 2>&1
-        command cat $1
-    else
-        command cat $1
-    fi
-}
-
-##### WORK ALIASES #####
 ring() {
     if [ -z $1 ]; then
        cd "/home/jbertran/git/work/ring"
