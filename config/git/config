@@ -14,7 +14,7 @@
 	ui   = true
 	diff = true
 [core]
-	excludesfile = /home/jbertran/.gitignore-global
+	excludesfile = ~/.config/git/ignore
 [filter "lfs"]
 	clean        = git-lfs clean -- %f
 	smudge       = git-lfs smudge --skip -- %f
