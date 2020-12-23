@@ -1,6 +1,6 @@
 [alias]
 	br     = branch
-  chp    = cherry-pick
+	chp    = cherry-pick
 	ci     = commit
 	co     = checkout
 	lg     = log --graph
@@ -32,7 +32,9 @@
 [rerere]
 	enabled = true
 [user]
-	name  = Jordi Bertran de Balanda
-	email = jbertran@users.noreply.github.com
+	name = Jordi Bertran de Balanda
+	email = jordi.bertran@scality.com
 [log]
 	follow = true
+[pull]
+	rebase = true
