@@ -50,11 +50,6 @@ CLONES = [
         dest=HOME_DIR/'.emacs.d',
         branch='master'
     ),
-    Clone(
-        source_url='https://github.com/jimeh/tmux-themepack',
-        dest=HOME_DIR/'.tmux-themepack',
-        branch='master'
-    ),
 ]
 
 
