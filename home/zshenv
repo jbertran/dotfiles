@@ -39,5 +39,6 @@ export SQLITE_HISTORY="$XDG_DATA_HOME"/sqlite_history
 export GEM_HOME="$XDG_DATA_HOME"/gem
 export GEM_SPEC_CACHE="$XDG_CACHE_HOME"/gem
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export SPACEMACSDIR="$XDG_CONFIG_HOME"/spacemacs
 alias unit="units --history \"$XDG_CACHE_HOME\"/units_history"
 alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
