@@ -1,9 +1,11 @@
 import functools
 
-from pathlib import Path
+import dodo1 as dodo
+
 from typing import Any, Callable, Optional, Type
 
 from doit.exceptions import TaskError
+
 
 def task_errors(*expected_exn: Type[Exception]) -> Callable[[Any], Any]:
     """Wrap a callable to create a resilient `doit` task
@@ -27,8 +29,22 @@ def task_errors(*expected_exn: Type[Exception]) -> Callable[[Any], Any]:
     return wrapped_task
 
 
-# def build_title(self, cmd: str, task):
-#     return '{cmd: <{width}} {path}'.format(
-#         cmd=self.name, width=constants.CMD_WIDTH,
-#         path=build_relpath(Path(task.targets[0])),
-#     )
+def unpack_single_dict(data: dict) -> tuple:
+    """Given a dict with a single key, unpack this dict."""
+    if len(data) != 1:
+        raise Exception(
+            'Expected single key-value pair in package definition'
+        )
+    key = next(iter(data.keys()))
+    return key, data[key]
+
+
+def advertise_task(origin, task_name, task_func):
+    task_func_name = f'task_{task_name}'
+    current_attr = getattr(dodo, task_func_name, None)
+    if current_attr is not None:
+        raise Exception(
+            f'Attempting to advertise task {task_func_name} from'
+            f'{origin} but a task with the same name is already advertised'
+        )
+    setattr(dodo, task_func_name, task_func)

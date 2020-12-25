@@ -1,0 +1,65 @@
+home-files:
+  - symtree:
+      source: home
+      dest: ~/
+      hide_files: yes
+config-files:
+  - symtree:
+      soure: config
+      dest: ~/.config
+      create_dirs: yes
+spacemacs:
+  - clone:
+      source: https://github.com/syl20bnr/spacemacs
+      dest: ~/.emacs.d
+      branch: master
+base-packages:
+  - packages:
+      # Essentials
+      - git
+      - base-devel
+      - yay:
+          pkg_source: git
+          git_source: https://aur.archlinux.org/yay.git
+          install: makepkg -si
+          require:
+            - git
+            - base-devel
+      - blueman
+      - keychain
+      - lightdm
+      - networkmanager
+      - networkmanager-openvpn
+      - network-manager-applet
+      - pulseaudio
+      - pulseaudio-bluetooth
+      - rofi
+      - terminator
+      - zsh
+      - zsh-theme-powerlevel10k
+      # Python
+      - flake8
+      - ipython
+      - python-language-server
+      - python-pip
+      - python-pylint
+      - python-tox
+      - python-virtualenvwrapper
+      # Fonts
+      - powerline-fonts
+      - ttf-fira-code
+      - ttf-font-awesome
+      - ttf-hack
+      # Tools
+      - docker
+      - docker-compose
+      - emacs
+      - feh
+      - htop
+      - jq
+      - pandoc
+      - rdesktop
+      - udisks2
+      - unzip
+      - vim
+      - zathura-pdf-poppler

@@ -1,66 +1,16 @@
-import configparser
 import os
 
 from pathlib import Path
-from typing import Optional, Sequence
+from typing import Optional
 
 from doit.exceptions import TaskError
 
-from . import utils
-
-
-class Clone:
-
-    def __init__(
-        self,
-        source_url: str,
-        dest: Path = None,
-        branch: str = ''
-    ):
-        self.source_url = source_url
-        self.branch = branch
-        self.dest = dest
-
-    @property
-    def clone(self):
-        action = ['git', 'clone', self.source_url]
-        if self.dest is not None:
-            action.append(self.dest)
-        if self.branch:
-            action.extend(['--branch', self.branch])
-        return action
-
-    def uptodate(self):
-        if not self.dest.is_dir:
-            return False
-
-        gitconfig = self.dest / '.git' / 'config'
-        if not gitconfig.is_file():
-            return False
-
-        try:
-            conf = configparser.ConfigParser()
-            conf.read(str(gitconfig))
-            gitconf_url = conf['remote "origin"']['url'].rstrip('.git')
-            dodo_url = self.source_url.rstrip('.git')
-            return gitconf_url == dodo_url
-        except KeyError:
-            return False
-
-        return True
-
-    @property
-    def task(self):
-        return {
-            'name': self.source_url,
-            'actions': [self.clone],
-            'uptodate': [self.uptodate()]
-        }
+from deploy import utils
 
 
 class Mkdir:
 
-    def __init__(self, dir_path: str):
+    def __init__(self, dir_path: Path):
         self.dir_path = dir_path
 
     def task_name(self):
@@ -105,16 +55,12 @@ class Symlink:
 
     @property
     def task(self):
-        task_dict = {
-            'name': str(self.file_source),
+        if self.dir_dep:
+            yield Mkdir(self.file_dest.parent).task
+        yield {
             'actions': [self.link],
             'uptodate': [self.uptodate],
         }
-        if self.dir_dep:
-            task_dict['task_dep'] = [
-                'config_subdir:{}'.format(self.file_dest.parent)
-            ]
-        return task_dict
 
     @utils.task_errors(IOError)
     def link(self) -> Optional[TaskError]:
