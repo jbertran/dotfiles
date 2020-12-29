@@ -15,7 +15,6 @@ eval $(keychain --eval --quiet)
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # Setup venvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git/work
 source /usr/bin/virtualenvwrapper.sh
 

@@ -80,3 +80,12 @@ ring() {
         cd $version_path/ring-$version
     fi
 }
+
+layout() {
+    local default_layout="single"
+    local layout=$1
+    if [ -z $layout ]; then
+        layout=$default_layout
+    fi
+    source "${XDG_CONFIG_HOME:-$HOME/.config}/screenlayout/$layout.sh"
+}
