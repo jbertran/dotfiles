@@ -1,8 +1,0 @@
-configuration {
-  combi-modi: "window,run,ssh";
-  font: "hack 9";
-  matching: "fuzzy";
-  terminal: "/usr/bin/terminator";
-  theme: "/usr/share/rofi/themes/glue_pro_blue.rasi";
-  width: 30;
-}
