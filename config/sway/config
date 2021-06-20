@@ -13,7 +13,8 @@ set $term terminator
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $uifont "pango:Ubuntu 10"
+set $menu bemenu-run --fn $uifont | xargs swaymsg exec --
 
 ### Output configuration
 #
