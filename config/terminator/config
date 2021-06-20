@@ -1,24 +1,34 @@
 [global_config]
-  enabled_plugins = ,
-  title_font = MesloLGS NF 9
   title_hide_sizetext = True
   title_transmit_bg_color = "#f3f3f3"
+  enabled_plugins = ,
   title_use_system_font = False
+  title_font = MesloLGS NF 9
 [keybindings]
   cycle_next = None
   cycle_prev = None
+  go_up = <Primary><Alt>Up
   go_down = <Primary><Alt>Down
   go_left = <Primary><Alt>Left
   go_right = <Primary><Alt>Right
-  go_up = <Primary><Alt>Up
-  next_tab = <Primary>Tab
-  prev_tab = <Shift>Tab
+  split_horiz = <Primary>2
+  split_vert = <Primary>3
+  resize_up = <Alt>Up
   resize_down = <Alt>Down
   resize_left = <Alt>Left
   resize_right = <Alt>Right
-  resize_up = <Alt>Up
-  split_horiz = <Primary>2
-  split_vert = <Primary>3
+  next_tab = <Primary>Tab
+  prev_tab = <Shift>Tab
+  help = ""
+[profiles]
+  [[default]]
+    background_color = "#282828"
+    cursor_color = "#536870"
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -29,12 +39,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_color = "#fdf6e3"
-    cursor_color = "#536870"
-    foreground_color = "#657b83"
-    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
