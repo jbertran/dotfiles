@@ -217,7 +217,7 @@ bar {
   #	tray_output primary
   #	tray_output eDP1
 
-  font pango:Sans 10
+  font pango:Ubuntu 10
 	strip_workspace_numbers yes
 
   colors {
