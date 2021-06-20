@@ -20,6 +20,9 @@ alias cdp='cd ~/git/perso'
 alias cdw='cd ~/git/work'
 alias gst='git status'
 
+# docker-compose
+alias dc='docker-compose'
+
 # Useful shit
 alias cat='bat --style=plain'
 alias grn='grep -rn'
