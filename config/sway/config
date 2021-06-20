@@ -30,15 +30,11 @@ output 'Sharp Corporation 0x14D0 0x00000000' pos 1310 2340
 output 'Dell Inc. DELL U2414H 9TG465AJ6MJL' pos 230 1450 transform 90
 output 'Dell Inc. DELL U2414H 9TG465BF2WFL' pos 1310 1260
 
-### Idle configuration
-#
-# Example configuration:
-#
 # exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+#   timeout 600  $lock \
+#   timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#   before-sleep $lock
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
