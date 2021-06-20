@@ -71,15 +71,25 @@ def task_homelink():
 
 
 TARGET_CONFIG_DIR = HOME_DIR / '.config'
-CONFIGLINKS = [
-    Symlink(
-        source=config_file,
-        dest_dir=TARGET_CONFIG_DIR / source_dir.name,
-        dir_dep=True
-    )
-    for source_dir in CONFIG_DIR.iterdir()
-    for config_file in source_dir.iterdir()
-]
+CONFIGLINKS = []
+for node in CONFIG_DIR.iterdir():
+    if node.is_file():
+        CONFIGLINKS.append(
+            Symlink(
+                source=node,
+                dest_dir=TARGET_CONFIG_DIR,
+                dir_dep=False
+            )
+        )
+    else:
+        for config_file in node.iterdir():
+            CONFIGLINKS.append(
+                Symlink(
+                    source=config_file,
+                    dest_dir=TARGET_CONFIG_DIR / node.name,
+                    dir_dep=True
+                )
+            )
 
 
 def task_config_subdir():
