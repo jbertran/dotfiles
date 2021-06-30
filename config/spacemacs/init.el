@@ -39,6 +39,7 @@ values."
      emacs-lisp
      git
      helm
+     (javascript :variables js-indent-level 2)
      org
      plantuml
      python
