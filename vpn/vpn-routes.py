@@ -6,7 +6,7 @@ import sys
 LOGFILE = '/var/log/vpn-out'
 
 NM_PROFILE = os.environ.get('CONNECTION_ID')
-if NM_PROFILE != 'scality':
+if NM_PROFILE.lower() != 'scality':
     sys.exit(0)
 
 import subprocess
@@ -64,3 +64,6 @@ if __name__ == '__main__':
                 route_action_res = False
     except Exception as exc:
         log_error(str(exc))
+        route_action_res = False
+
+    sys.exit(int(not route_action_res))
