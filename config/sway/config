@@ -13,8 +13,7 @@ set $term terminator
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $uifont "pango:Ubuntu 10"
-set $menu bemenu-run --fn $uifont | xargs swaymsg exec --
+set $menu wofi --show drun,run -i
 
 ### Output configuration
 #
