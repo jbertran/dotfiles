@@ -38,8 +38,12 @@ values."
      docker
      emacs-lisp
      git
+     go
      helm
-     (javascript :variables js-indent-level 2)
+     (javascript :variables
+                 js-indent-level 4
+                 javascript-backend 'tern
+                 )
      org
      plantuml
      python
@@ -48,6 +52,11 @@ values."
      shell-scripts
      sql
      syntax-checking
+     tern
+     (typescript :varaiables
+                 typescript-backend 'tern
+                 )
+     (unicode-fonts :variables unicode-fonts-enable-ligatures t)
      (version-control :variables version-control-global-margin t)
      yaml
      )
@@ -133,11 +142,11 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("DejaVu Sans Code"
                                :size 12
                                ;;:weight normal
                                ;;:width normal
-                               :powerline-scale 1.1
+                               :powerline-scale 1
                                )
    dotspacemacs-mode-line-theme '(vim-powerline)
    ;; The leader key
@@ -323,18 +332,15 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default))
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
-   '(gruvbox-dark-theme yapfify winum web-mode uuidgen unfill toml-mode toc-org tagedit sql-indent slim-mode scss-mode sass-mode salt-mode mmm-jinja2 yaml-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake racer py-isort pug-mode phpunit phpcbf php-extras php-auto-yasnippets org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-mime org-download org-bullets nginx-mode mwim minitest livid-mode skewer-mode simple-httpd live-py-mode link-hint less-css-mode js2-refactor multiple-cursors js-doc jinja2-mode intero lv htmlize hlint-refactor helm-hoogle helm-gtags helm-css-scss haml-mode go-guru go-eldoc gnuplot git-link ggtags fuzzy flycheck-rust flycheck-pos-tip flycheck-haskell flycheck eyebrowse evil-visual-mark-mode evil-unimpaired transient evil-ediff goto-chg undo-tree emmet-mode dumb-jump drupal-mode php-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat diminish csv-mode company-web web-completion-data tern company-go go-mode company-ghci company-emacs-eclim company-ansible coffee-mode chruby cargo bundler inf-ruby yasnippet ansible-doc ansible pyvenv pytest pyenv-mode py-yapf pip-requirements hy-mode helm-pydoc helm-company eclim disaster cython-mode company-tern dash-functional company-statistics company-quickhelp pos-tip company-ghc ghc company-cabal company-c-headers company-auctex company-anaconda cmake-mode clang-format auctex anaconda-mode pythonic f ac-ispell shm hindent helm-c-yasnippet haskell-snippets haskell-mode company cmm-mode auto-yasnippet auto-complete web-beautify utop column-enforce-mode dart-mode tuareg rust-mode zenburn-theme sanityinc-solarized-theme color-theme-sanityinc-solarized-theme color-theme-sanityinc-solarized js2-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit-popup git-commit with-editor smooth-scroll magit elpy ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))
- '(standard-indent 4))
+   '(unfill sql-indent smeargle salt-mode mmm-jinja2 yaml-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup magit jinja2-mode insert-shebang htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit with-editor gh-md fuzzy flycheck-pos-tip pos-tip flycheck fish-mode dockerfile-mode docker transient tablist json-mode docker-tramp json-snatcher json-reformat disaster diff-hl company-statistics company-shell company-c-headers company-ansible company cmake-mode clang-format chruby bundler inf-ruby auto-yasnippet yasnippet ansible-doc ansible ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ )
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
 This is an auto-generated function, do not modify its content directly, use
@@ -354,7 +360,7 @@ This function is called at the very end of Spacemacs initialization."
  '(helm-occur-use-ioccur-style-keys t)
  '(helm-semantic-lynx-style-map t t)
  '(package-selected-packages
-   '(posframe persistent-scratch origami insert-shebang flycheck-bashate fish-mode doom-modeline shrink-path company-shell lsp-mode gruvbox-dark-theme yapfify winum web-mode uuidgen unfill toml-mode toc-org tagedit sql-indent slim-mode scss-mode sass-mode salt-mode mmm-jinja2 yaml-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake racer py-isort pug-mode phpunit phpcbf php-extras php-auto-yasnippets org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-mime org-download org-bullets nginx-mode mwim minitest livid-mode skewer-mode simple-httpd live-py-mode link-hint less-css-mode js2-refactor multiple-cursors js-doc jinja2-mode intero lv htmlize hlint-refactor helm-hoogle helm-gtags helm-css-scss haml-mode go-guru go-eldoc gnuplot git-link ggtags fuzzy flycheck-rust flycheck-pos-tip flycheck-haskell flycheck eyebrowse evil-visual-mark-mode evil-unimpaired transient evil-ediff goto-chg undo-tree emmet-mode dumb-jump drupal-mode php-mode dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat diminish csv-mode company-web web-completion-data tern company-go go-mode company-ghci company-emacs-eclim company-ansible coffee-mode chruby cargo bundler inf-ruby yasnippet ansible-doc ansible pyvenv pytest pyenv-mode py-yapf pip-requirements hy-mode helm-pydoc helm-company eclim disaster cython-mode company-tern dash-functional company-statistics company-quickhelp pos-tip company-ghc ghc company-cabal company-c-headers company-auctex company-anaconda cmake-mode clang-format auctex anaconda-mode pythonic f ac-ispell shm hindent helm-c-yasnippet haskell-snippets haskell-mode company cmm-mode auto-yasnippet auto-complete web-beautify utop column-enforce-mode dart-mode tuareg rust-mode zenburn-theme sanityinc-solarized-theme color-theme-sanityinc-solarized-theme color-theme-sanityinc-solarized js2-mode smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow helm-gitignore request gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit-popup git-commit with-editor smooth-scroll magit elpy ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))
+   '(tide typescript-mode unfill sql-indent smeargle salt-mode mmm-jinja2 yaml-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mwim mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup magit jinja2-mode insert-shebang htmlize helm-gitignore helm-company helm-c-yasnippet gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter git-commit with-editor gh-md fuzzy flycheck-pos-tip pos-tip flycheck fish-mode dockerfile-mode docker transient tablist json-mode docker-tramp json-snatcher json-reformat disaster diff-hl company-statistics company-shell company-c-headers company-ansible company cmake-mode clang-format chruby bundler inf-ruby auto-yasnippet yasnippet ansible-doc ansible ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))
  '(standard-indent 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
