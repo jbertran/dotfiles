@@ -30,6 +30,9 @@ alias tailf='tail -f'
 alias pgrep='pgrep -l'
 alias dexec='docker exec -i -t'
 
+# Unlock SSH keys
+alias unlock='/usr/bin/env python ~/.config/keys/unlock.py'
+
 # find -name
 
 fn() {
@@ -81,6 +84,12 @@ ring() {
         version_path="/home/jbertran/git/work/versions"
         version=$1;
         cd $version_path/ring-$version
+    fi
+}
+
+vault() {
+    if [ -z $1 ]; then
+        cd "/home/jbertran/git/work/Vault"
     fi
 }
 
