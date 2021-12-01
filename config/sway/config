@@ -29,6 +29,13 @@ output 'Sharp Corporation 0x14D0 0x00000000' pos 1310 2340
 output 'Dell Inc. DELL U2414H 9TG465AJ6MJL' pos 230 1450 transform 90
 output 'Dell Inc. DELL U2414H 9TG465BF2WFL' pos 1310 1260
 
+#
+# Laptop screen management
+#
+set $laptop eDP-1
+bindswitch lid:on output $laptop disable
+bindswitch lid:off output $laptop enable
+
 # exec swayidle -w \
 #   timeout 600  $lock \
 #   timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
