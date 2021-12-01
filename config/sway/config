@@ -246,7 +246,7 @@ bar {
 }
 
 ### LOCK ###
-bindsym Mod4+l exec swaylock -c 000000
+bindsym Mod4+l exec swaylock --clock --indicator-radius 100 --indicator-thickness 8 --screenshots --effect-blur 7x5 --grace 2
 
 ### BLUETOOTH ###
 exec blueman-tray
