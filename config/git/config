@@ -2,10 +2,12 @@
 	br     = branch
 	chp    = cherry-pick
 	ci     = commit
+	cia    = commit --amend
+	cif    = commit --fixup
 	co     = checkout
-	lg     = log --graph
-	reflog = reflog --pretty=reflog
-	rl     = reflog --pretty=reflog
+	lg     = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	puf    = push --force-with-lease
+	rl     = reflog
 	st     = status
 	wt     = worktree
 [am]
@@ -15,6 +17,9 @@
 	diff = true
 [core]
 	excludesfile = ~/.config/git/ignore
+	editor = vim
+[fetch]
+	prune = true
 [filter "lfs"]
 	clean        = git-lfs clean -- %f
 	smudge       = git-lfs smudge --skip -- %f
@@ -22,7 +27,7 @@
 	fetchexclude = 3rdparty/packages,3rdparty/yarn,buildenv/data,buildenv/docker,buildchain/layers/repository,setup/s3/archives
 	required     = true
 [grep]
-  linenumber     = true
+	linenumber     = true
 	extendedRegexp = true
 [push]
 	default = simple
@@ -35,6 +40,8 @@
 	name = Jordi Bertran de Balanda
 	email = jordi.bertran@scality.com
 [log]
-	follow = true
+	follow       = true
 [pull]
 	rebase = true
+[safe]
+	directory = *
