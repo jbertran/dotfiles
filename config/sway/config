@@ -36,15 +36,6 @@ set $laptop eDP-1
 bindswitch lid:on output $laptop disable
 bindswitch lid:off output $laptop enable
 
-# exec swayidle -w \
-#   timeout 600  $lock \
-#   timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#   before-sleep $lock
-
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
 ### Input configuration
 #
 # Example configuration:
@@ -246,7 +237,9 @@ bar {
 }
 
 ### LOCK ###
-bindsym Mod4+l exec swaylock --clock --indicator-radius 100 --indicator-thickness 8 --screenshots --effect-blur 7x5 --grace 2
+set $lock swaylock --clock --indicator-radius 100 --indicator-thickness 8 --screenshots --effect-blur 7x5 --grace 2
+exec swayidle -w timeout 180 $lock
+bindsym Mod4+l exec $lock
 
 ### BLUETOOTH ###
 exec blueman-tray
