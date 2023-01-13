@@ -38,7 +38,7 @@
 	enabled = true
 [user]
 	name = Jordi Bertran de Balanda
-	email = jordi.bertran@scality.com
+	email = jordi.bertran@datadoghq.com
 [log]
 	follow       = true
 [pull]
